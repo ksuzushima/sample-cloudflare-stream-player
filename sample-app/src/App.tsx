@@ -16,44 +16,48 @@ function App() {
   ];
 
   return (
-    <>
-      <div className="mb-10">
-        <h2 className="text-lg font-bold mb-4">autoplay + muted</h2>
-        <div className="grid grid-cols-2 gap-4 w-[800px]">
-          {videos.map((video) => (
-            <div className="w-full" key={video.videoId}>
-              <Stream
-                controls={false}
-                src={video.videoId}
-                autoplay
-                loop
-                muted
-                height={`${video.height}px`}
-                width={`${video.width}px`}
-              />
-            </div>
-          ))}
+    <div className="flex justify-center w-full">
+      <div className="max-w-[800px] w-full">
+        <div className="mb-10">
+          <h2 className="text-lg font-bold mb-4">autoplay + muted</h2>
+          <div className="grid grid-cols-2 gap-4">
+            {videos.map((video) => (
+              <div className="w-full" key={video.videoId}>
+                <Stream
+                  controls={false}
+                  src={video.videoId}
+                  autoplay
+                  loop
+                  muted
+                  responsive
+                  height={`${video.height}px`}
+                  width={`${video.width}px`}
+                />
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
 
-      <div>
-        <h2 className="text-lg font-bold mb-4">autoplay</h2>
-        <div className="grid grid-cols-2 gap-4 w-[800px]">
-          {videos.map((video) => (
-            <div className="w-full" key={video.videoId}>
-              <Stream
-                controls={false}
-                src={video.videoId}
-                autoplay
-                loop
-                height={`${video.height}px`}
-                width={`${video.width}px`}
-              />
-            </div>
-          ))}
+        <div className="max-w-[800px] w-full">
+          <h2 className="text-lg font-bold mb-4">autoplay</h2>
+          <div className="grid grid-cols-2 gap-4">
+            {videos.map((video) => (
+              <div className="w-full" key={video.videoId}>
+                <Stream
+                  controls={false}
+                  src={video.videoId}
+                  autoplay
+                  loop
+                  responsive
+                  height={`${video.height}px`}
+                  width={`${video.width}px`}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

@@ -18,7 +18,7 @@ function App() {
   return (
     <>
       <div className="mb-10">
-        <h2 className="text-lg font-bold mb-4">React component</h2>
+        <h2 className="text-lg font-bold mb-4">autoplay + muted</h2>
         <div className="grid grid-cols-2 gap-4 w-[800px]">
           {videos.map((video) => (
             <div className="w-full" key={video.videoId}>
@@ -37,12 +37,12 @@ function App() {
       </div>
 
       <div>
-        <h2 className="text-lg font-bold mb-4">React component</h2>
+        <h2 className="text-lg font-bold mb-4">autoplay</h2>
         <div className="grid grid-cols-2 gap-4 w-[800px]">
           {videos.map((video) => (
             <div className="w-full" key={video.videoId}>
               <Stream
-                controls
+                controls={false}
                 src={video.videoId}
                 autoplay
                 loop
